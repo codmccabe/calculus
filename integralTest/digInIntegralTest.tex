@@ -23,12 +23,12 @@ If $\lim_{n \to \infty} a_n \neq 0$, then $\sum_{k=k_0} a_k$ diverges.
 However, there are still some divergent series that the divergence test does not pick out!  We begin this section with such an example that shows how there is a connection between certain special types of series and improper integrals.
 
 \begin{model}
-Consider the series $\sum_{k=1}^{\infty} \frac{1}{k}$.  This series is called the \emph{harmonic series} and will be important in the coming material.  Notice that this series \wordChoice{\choice{is}\choice[correct]{is not}} geometric. It \wordChoice{\choice{is}\choice[correct]{is not}} telescoping, and $\lim_{n \to \infty} \frac{1}{n} = \answer{0}$, so the divergence test \wordChoice{\choice{is}\choice[correct]{is not}} conclusive.  So what should we do? 
+Consider the series $\sum_{k=1}^{\infty} \frac{1}{k}$.  This series is called the \emph{harmonic series} and will be important in the coming material.  Notice that this series \wordChoice{\choice{is}\choice[correct]{is not}} geometric. It \wordChoice{\choice{is}\choice[correct]{is not}} telescoping, and $\lim_{n \to \infty} \frac{1}{n} = \answer{0}$, so the divergence test \wordChoice{\choice{is}\choice[correct]{is not}} conclusive.  So what should we do?
 
 We have seen that we can graph a sequence as a collection of points in
 the plane.  We consider the \dfn{harmonic sequence} where $a_n = 1/n$, and write out the ordered list that represents it.
 \[
-1, \, \frac{1}{2}, \, \frac{1}{3}, \, \frac{1}{4}, \, \frac{1}{5}, \,\dots . 
+1, \, \frac{1}{2}, \, \frac{1}{3}, \, \frac{1}{4}, \, \frac{1}{5}, \,\dots .
 \]
 If we plot the harmonic sequence, it looks like this.
 \begin{image}
@@ -46,11 +46,11 @@ If we plot the harmonic sequence, it looks like this.
             clip=false,
             axis on top,
           ]
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole          
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(2,1/2)};  %% closed hole          
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(3,1/3)};  %% closed hole          
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,1/4)};  %% closed hole          
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1/5)};  %% closed hole  
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(2,1/2)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(3,1/3)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,1/4)};  %% closed hole
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1/5)};  %% closed hole
         \end{axis}
 \end{tikzpicture}
 \end{image}
@@ -71,36 +71,36 @@ As it turns out, there is a nice way to visualize the sum $\sum_{k=1}^\infty \fr
             axis on top,
           ]
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(1,0) (2,0) (2, 1) (1,1) (1, 0)};          
-          
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(1,0) (2,0) (2, 1) (1,1) (1, 0)};
+
 	\addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(2,.5)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(2,0) (3,0) (3, .5) (2,.5) (2, 0)};          
-          
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(2,0) (3,0) (3, .5) (2,.5) (2, 0)};
+
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(3,.333)};  %% closed hole
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(3,0) (4,0) (4, .333) (3,.333) (3, 0)};          
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(3,0) (4,0) (4, .333) (3,.333) (3, 0)};
 
-          
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,.25)};  %% closed hole        
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(4,0) (5,0) (5, .25) (4,.25) (4, 0)};          
 
-		  
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,.2)};  %% closed hole 
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(5,0) (6,0) (6, .2) (5,.2) (5, 0)};          
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,.25)};  %% closed hole
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(4,0) (5,0) (5, .25) (4,.25) (4, 0)};
+
+
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,.2)};  %% closed hole
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(5,0) (6,0) (6, .2) (5,.2) (5, 0)};
            %\addplot [draw=penColor,very thick,smooth, domain=.5:6] {1/x};
         \end{axis}
 \end{tikzpicture}
 \end{image}
 
-Note that the height of the $k$-th rectangle is precisely $\frac{1}{k}$ and the width of all of the rectangles is $1$, so the area of the $k$-th rectangle is $\frac{1}{k}$.  
+Note that the height of the $k$-th rectangle is precisely $\frac{1}{k}$ and the width of all of the rectangles is $1$, so the area of the $k$-th rectangle is $\frac{1}{k}$.
 
-Now, in order to conclude whether $\sum_{k=1}^{\infty} a_k$ converges, we must analyze $\lim_{n \to \infty} s_n$.  Note that $s_n$ has a nice visual interpretation as the sum of the areas of the first $n$ rectangles, but since we don't have an explicit formula for $s_n$ we can try to establish that 
+Now, in order to conclude whether $\sum_{k=1}^{\infty} a_k$ converges, we must analyze $\lim_{n \to \infty} s_n$.  Note that $s_n$ has a nice visual interpretation as the sum of the areas of the first $n$ rectangles, but since we don't have an explicit formula for $s_n$ we can try to establish that
 
 \begin{itemize}
 \item $\{s_n\}$ is bounded and monotonic, and hence $\lim_{n \to \infty} s_n$ exists.
 \item $\{s_n\}$ is unbounded so $\lim_{n \to \infty} s_n$ does not exist.
 \end{itemize}
 
-How can we establish this?  The previous image might remind you of a Riemann Sum and for good reason. 
+How can we establish this?  The previous image might remind you of a Riemann Sum and for good reason.
 This technique lets us visually compare the sum of an infinite series to the
 value of an improper integral.  For instance, if we add a plot of
 $1/x$ to our picture above
@@ -119,21 +119,21 @@ $1/x$ to our picture above
             axis on top,
           ]
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(1,0) (2,0) (2, 1) (1,1) (1, 0)};          
-          
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(1,0) (2,0) (2, 1) (1,1) (1, 0)};
+
 	\addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(2,.5)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(2,0) (3,0) (3, .5) (2,.5) (2, 0)};          
-          
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(2,0) (3,0) (3, .5) (2,.5) (2, 0)};
+
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(3,.333)};  %% closed hole
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(3,0) (4,0) (4, .333) (3,.333) (3, 0)};          
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(3,0) (4,0) (4, .333) (3,.333) (3, 0)};
 
-          
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,.25)};  %% closed hole        
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(4,0) (5,0) (5, .25) (4,.25) (4, 0)};          
 
-		  
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,.2)};  %% closed hole 
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(5,0) (6,0) (6, .2) (5,.2) (5, 0)};          
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,.25)};  %% closed hole
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(4,0) (5,0) (5, .25) (4,.25) (4, 0)};
+
+
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,.2)};  %% closed hole
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(5,0) (6,0) (6, .2) (5,.2) (5, 0)};
            \addplot [draw=penColor,very thick,smooth, domain=.5:6] {1/x};
         \end{axis}
 \end{tikzpicture}
@@ -146,10 +146,10 @@ we see that
 Notice that the sum on the righthand side is simply $s_n$.  Since $\int_1^{\infty} \frac{1}{x} \d x$ is an improper integral, so we need to determine whether $\lim_{n \to \infty} \left[ \int_1^n \frac{1}{x} \d x \right]$ exists.  Notice
 
 \[
-\lim_{n \to \infty} \left[ \int_1^n \frac{1}{x} \d x \right] = \lim_{n \to \infty} \eval{\ln(x)}_1^n = \infty. 
+\lim_{n \to \infty} \left[ \int_1^n \frac{1}{x} \d x \right] = \lim_{n \to \infty} \eval{\ln(x)}_1^n = \infty.
 \]
 
-This means that $\{s_n\}$ is not bounded and hence $\lim_{n \to \infty} s_n = \infty$ and $\sum_{k=1}^{\infty} \frac{1}{k}$ must diverge.  
+This means that $\{s_n\}$ is not bounded and hence $\lim_{n \to \infty} s_n = \infty$ and $\sum_{k=1}^{\infty} \frac{1}{k}$ must diverge.
 
 \begin{remark}
 To argue why $\{s_n\}$ is not bounded a little more formally, note that if $\{s_n\}$ were bounded, then \emph{all} of the terms in the sequence $\{s_n\}$ would be less than some number $M$.  Since $\lim_{n \to \infty} \left[ \int_1^n \frac{1}{x} \d x \right] =  \infty$, this means that, for some value of $N$ after which all values of $n>N$, $ \int_1^n \frac{1}{x} \d x > M$, and since $\int_1^n \frac{1}{x} \d x < s_n$ for all $n$, we may conclude that $s_n >M$ for all $n\geq N$ and hence $\{s_n\}$ is unbounded.
@@ -171,14 +171,14 @@ By ``eventually'' above, we really mean that $f(x)$ should be continuous, positi
     $\sum_{k=1}^\infty a_k$.
 \end{quote}
 
-That's a pretty good observation, but we can do even better. 
+That's a pretty good observation, but we can do even better.
 
 \begin{model}
 Consider the
 sequence $\{a_n\}_{n=1}$ where $a_n = \frac{1}{n^2}$.  We can write out a few terms
 
 \[
-1, \, \frac{1}{4}, \, \frac{1}{9}, \, \frac{1}{16}, \, \frac{1}{25}, \,\dots 
+1, \, \frac{1}{4}, \, \frac{1}{9}, \, \frac{1}{16}, \, \frac{1}{25}, \,\dots
 \]
 and try the same idea of visualizing the series $\sum_{k=1}^{\infty} \frac{1}{k^2}$ as an area.
 
@@ -220,24 +220,24 @@ and try the same idea of visualizing the series $\sum_{k=1}^{\infty} \frac{1}{k^
             axis on top,
           ]
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(0,1)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(0,0) (1,0) (1, 1)(0,1) };   
-		
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(0,0) (1,0) (1, 1)(0,1) };
+
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1/4)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(1,0) (2,0) (2, 1/4) (1,1/4) (1, 0)};          
-          
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(1,0) (2,0) (2, 1/4) (1,1/4) (1, 0)};
+
 	\addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(2,1/9)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(2,0) (3,0) (3, 1/9) (2,1/9) (2, 0)};          
-          
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(2,0) (3,0) (3, 1/9) (2,1/9) (2, 0)};
+
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(3,1/16)};  %% closed hole
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(3,0) (4,0) (4, 1/16) (3,1/16) (3, 0)};          
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(3,0) (4,0) (4, 1/16) (3,1/16) (3, 0)};
 
-          
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,1/25)};  %% closed hole        
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(4,0) (5,0) (5, 1/25) (4,1/25) (4, 0)};          
 
-		  
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1/36)};  %% closed hole 
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(5,0) (6,0) (6, 1/36) (5,1/36) (5, 0)};          
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,1/25)};  %% closed hole
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(4,0) (5,0) (5, 1/25) (4,1/25) (4, 0)};
+
+
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1/36)};  %% closed hole
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(5,0) (6,0) (6, 1/36) (5,1/36) (5, 0)};
            %\addplot [draw=penColor,very thick,smooth, domain=.5:6] {1/x};
         \end{axis}
 \end{tikzpicture}
@@ -263,27 +263,27 @@ $1/x^2$ to our picture above.
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
             axis on top,
           ]
-          
+
                     \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(0,1)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(0,0) (1,0) (1, 1)(0,1) };   
-		
-		
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(0,0) (1,0) (1, 1)(0,1) };
+
+
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1/4)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(1,0) (2,0) (2, 1/4) (1,1/4) (1, 0)};          
-          
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(1,0) (2,0) (2, 1/4) (1,1/4) (1, 0)};
+
 	\addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(2,1/9)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(2,0) (3,0) (3, 1/9) (2,1/9) (2, 0)};          
-          
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(2,0) (3,0) (3, 1/9) (2,1/9) (2, 0)};
+
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(3,1/16)};  %% closed hole
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(3,0) (4,0) (4, 1/16) (3,1/16) (3, 0)};          
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(3,0) (4,0) (4, 1/16) (3,1/16) (3, 0)};
 
-          
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,1/25)};  %% closed hole        
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(4,0) (5,0) (5, 1/25) (4,1/25) (4, 0)};          
 
-		  
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1/36)};  %% closed hole 
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(5,0) (6,0) (6, 1/36) (5,1/36) (5, 0)};          
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,1/25)};  %% closed hole
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(4,0) (5,0) (5, 1/25) (4,1/25) (4, 0)};
+
+
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1/36)};  %% closed hole
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(5,0) (6,0) (6, 1/36) (5,1/36) (5, 0)};
            \addplot [draw=penColor,very thick,smooth, domain=.5:6] {1/x^2};
         \end{axis}
 \end{tikzpicture}
@@ -306,28 +306,28 @@ Note that we have a slight annoyance if we consider $\int_{0}^{\infty} \frac{1}{
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
             axis on top,
           ]
-          
-                    \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(0,1)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(0,0) (1,0) (1, 1)(0,1) };   
-		
-		
+
+    %                 \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(0,1)};  %% closed hole
+		% \addplot [draw=penColor, fill = fillp] plot coordinates {(0,0) (1,0) (1, 1)(0,1) };
+
+
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(1,1/4)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(1,0) (2,0) (2, 1/4) (1,1/4) (1, 0)};          
-          
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(1,0) (2,0) (2, 1/4) (1,1/4) (1, 0)};
+
 	\addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(2,1/9)};  %% closed hole
-		\addplot [draw=penColor, fill = fillp] plot coordinates {(2,0) (3,0) (3, 1/9) (2,1/9) (2, 0)};          
-          
+		\addplot [draw=penColor, fill = fillp] plot coordinates {(2,0) (3,0) (3, 1/9) (2,1/9) (2, 0)};
+
           \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(3,1/16)};  %% closed hole
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(3,0) (4,0) (4, 1/16) (3,1/16) (3, 0)};          
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(3,0) (4,0) (4, 1/16) (3,1/16) (3, 0)};
 
-          
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,1/25)};  %% closed hole        
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(4,0) (5,0) (5, 1/25) (4,1/25) (4, 0)};          
 
-		  
-          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1/36)};  %% closed hole 
-          	\addplot [draw=penColor, fill = fillp] plot coordinates {(5,0) (6,0) (6, 1/36) (5,1/36) (5, 0)};          
-           \addplot [draw=penColor,very thick,smooth, domain=.5:6] {1/x^2};
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(4,1/25)};  %% closed hole
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(4,0) (5,0) (5, 1/25) (4,1/25) (4, 0)};
+
+
+          \addplot[color=penColor,fill=penColor,only marks,mark=*] coordinates{(5,1/36)};  %% closed hole
+          	\addplot [draw=penColor, fill = fillp] plot coordinates {(5,0) (6,0) (6, 1/36) (5,1/36) (5, 0)};
+           \addplot [draw=penColor,very thick,smooth, domain=1:6] {1/x^2};
         \end{axis}
 \end{tikzpicture}
 \end{image}
@@ -340,11 +340,11 @@ This is not an issue, because we know
 The value of the lower index of summation does not affect whether an infinite series converges or diverges.
 \end{quote}
 
-That is, if we can show $\sum_{k=2}^{\infty} \frac{1}{k^2}$ converges, then $\sum_{k=1}^{\infty} \frac{1}{k^2}$ must also converge.  Now to determine whether $\sum_{k=2}^{\infty} \frac{1}{k^2}$ converges, let $s_n = \sum_{k=2}^n \frac{1}{k^2}$.  We must determine if $\lim_{n \to \infty} s_n$ exists.  Since we expect $\int_1^{\infty} f(x) \d x$ to converge, we expect $\sum_{k=2}^{\infty} \frac{1}{k^2}$ to converge.  To show this, we should establish  \wordChoice{\choice[correct]{$\{s_n\}$ is bounded and monotonic, and hence $\lim_{n \to \infty} s_n$ exists}\choice{$\{s_n\}$ is unbounded so $\lim_{n \to \infty} s_n$ does not exist}} . 
+That is, if we can show $\sum_{k=2}^{\infty} \frac{1}{k^2}$ converges, then $\sum_{k=1}^{\infty} \frac{1}{k^2}$ must also converge.  Now to determine whether $\sum_{k=2}^{\infty} \frac{1}{k^2}$ converges, let $s_n = \sum_{k=2}^n \frac{1}{k^2}$.  We must determine if $\lim_{n \to \infty} s_n$ exists.  Since we expect $\int_1^{\infty} f(x) \d x$ to converge, we expect $\sum_{k=2}^{\infty} \frac{1}{k^2}$ to converge.  To show this, we should establish  \wordChoice{\choice[correct]{$\{s_n\}$ is bounded and monotonic, and hence $\lim_{n \to \infty} s_n$ exists}\choice{$\{s_n\}$ is unbounded so $\lim_{n \to \infty} s_n$ does not exist}} .
 
-Notice that since $\frac{1}{k^2} > 0$ for all $k$, and $s_n = \sum_{k=1}^n$, the sequence $\{s_n\}$ is \wordChoice{\choice[correct]{increasing}\choice{decreasing}}.  
+Notice that since $\frac{1}{k^2} > 0$ for all $k$, and $s_n = \sum_{k=1}^n$, the sequence $\{s_n\}$ is \wordChoice{\choice[correct]{increasing}\choice{decreasing}}.
 
-To show that it is also bounded, note that for any $n \geq 2$, we can observe from the picture that 
+To show that it is also bounded, note that for any $n \geq 2$, we can observe from the picture that
 
 \[
 s_n = \sum_{k=1}^n\frac{1}{k^2} \leq
@@ -356,7 +356,7 @@ In particular, since we shade more area if we increase $n$, we have that $\int_1
 \int_1^\infty \frac{1}{x^2} \d x = 1,
 \]
 
-and we thus have 
+and we thus have
 
 \[
 s_n = \sum_{k=1}^n\frac{1}{k^2} \leq \int_1^n \frac{1}{x^2} \d x \leq 1 \textrm{ for all } n \geq 2.
@@ -389,7 +389,7 @@ By ``eventually'' above, we really mean that $f(x)$ should be continuous, positi
 The observations from the previous examples give us a new convergence test called the \textit{integral test}:
 \begin{theorem}[Integral Test]
    Suppose that $\{a_n\}_{n=n_0}$ is a sequence, and suppose that $f(x)$ is an eventually continuous, positive, and decreasing function
-    with $f(n)=a_n$ for all $n \geq N$, where $N$ is an integer.  Then, 
+    with $f(n)=a_n$ for all $n \geq N$, where $N$ is an integer.  Then,
     \[
     \sum_{k=n_0}^\infty a_k\text{ and }\int_N^\infty f(x) \d x
     \]
@@ -403,7 +403,7 @@ Determine whether $\sum_{k=1}^{\infty} \frac{k}{(2k^2+1)^2}$ converges.
 \begin{explanation}
 Note that $\lim_{n \to \infty}  \frac{n}{(2n+1)^2} =0$ so the divergence test is inconclusive.  Also, this is not a geometric series.  Let's try the integral test with $f(x) =  \frac{x}{(2x+1)^2}$.  Notice that the function $f(x) = \frac{x}{(2x^2+1)^2}$ is continuous and positive on $[1,\infty)$.  We can check where it is decreasing part by computing $f'(x) = \frac{-6x^2+1}{(2x^2+1)^3} < 0$.  So, $f'(x)$ is certainly negative for $x >1$ and hence $f(x)$ is also decreasing on $[1,\infty)$.
 
-Notice that, after performing a substitution if necessary,  
+Notice that, after performing a substitution if necessary,
 
 \[
 \int \frac{x}{(2x+1)^2} \d x = -\frac{1}{8x^2+4} +C
@@ -420,14 +420,14 @@ The next examples synthesizes some concepts we have seen thus far.
 Let $a_n = \frac{1}{n^2+4}$ for $n \geq 1$ and let $s_n = \sum_{k=1}^n a_k$.  Determine if $\{a_n\}_{n=1}$ and $\{s_n\}_{n=1}$ are bounded and/or monotonic.
 
 \begin{explanation}
-Note that $\{a_n\}_{n=1}$ is decreasing (and hence monotonic) because denominator increases as $n$ increases.  Hence, the fraction becomes smaller as $n$ grows larger.  
+Note that $\{a_n\}_{n=1}$ is decreasing (and hence monotonic) because denominator increases as $n$ increases.  Hence, the fraction becomes smaller as $n$ grows larger.
 
 $\{a_n\}_{n=1}$ is also bounded since $0 \leq a_n \leq 1$ for all $n$ (i.e. no terms are larger than $1$ or smaller than $0$).
 
-For $s_n$, note that 
+For $s_n$, note that
 
 \[
-s_n = s_{n-1} +a_n = s_{n-1} + \frac{1}{n^2+4}. 
+s_n = s_{n-1} +a_n = s_{n-1} + \frac{1}{n^2+4}.
 \]
 
 Since $ \frac{1}{n^2+4} >0$, we have that $s_{n+1} > s_n$ for all $n$, so $\{s_n\}_{n=1}$ is increasing (and hence monotonic).  To determine if $\{s_n\}_{n=1}$ bounded, we can determine whether $\lim_{n \to \infty} s_n$ exists.  Indeed, since $\{s_n\}_{n=1}$ is increasing, we have that $s_n < \lim_{n \to \infty} s_n$, so if the limit exists, it serves as an upper bound for all of the terms in the sequence.
@@ -439,9 +439,9 @@ We can write out the limit in this case and find
 \]
 \end{explanation}
 
-Thus, all we have to do is determine if the infinite series above converges.  
+Thus, all we have to do is determine if the infinite series above converges.
 
-To do this, we can apply the integral test.  Let $f(x)= \frac{1}{x^2+4}$.  Notice that $f(x)$ is positive, continuous, and decreasing on $[1,\infty)$, and 
+To do this, we can apply the integral test.  Let $f(x)= \frac{1}{x^2+4}$.  Notice that $f(x)$ is positive, continuous, and decreasing on $[1,\infty)$, and
 
 \[
 \lim_{b \to \infty} \left[ \int_0^b \frac{1}{x^2+4} \right]= \lim_{b \to \infty} \eval{\frac{1}{2} \arctan\left(\frac{x}{2}\right)}_1^b =\frac{\pi}{4}- \frac{1}{2}\arctan\left(\frac{1}{2}\right).
@@ -461,10 +461,10 @@ Notice that in our model examples, both series were $p$-series.
 \item The harmonic series $\sum_{k=1}^{\infty} \frac{1}{k}$ is a $p$-series with $p = \answer{1}$.  It \wordChoice{\choice{converges}\choice[correct]{diverges}}.
 \item The series $\sum_{k=1}^{\infty} \frac{1}{k^2}$ is a $p$-series with $p = \answer{2}$. It \wordChoice{\choice[correct]{converges}\choice{diverges}}.
 \end{itemize}
-  
+
  \begin{explanation}
-    First, recall that we have already dealt with the case that $p = 1$, since 
-    this case is exactly the harmonic series.  We have used the integral test 
+    First, recall that we have already dealt with the case that $p = 1$, since
+    this case is exactly the harmonic series.  We have used the integral test
     to show that the harmonic series diverges.
     Now, assume that $p \ne 1$.  By the integral test,
     \[
@@ -489,18 +489,16 @@ This result is important enough to list as a theorem.
 \begin{theorem}[$p$-series test]\index{p-series test@$p$-test}
  The series $\sum_{k=1}^\infty \frac{1}{k^p}$ converges if and only if $p > 1$.
  \end{theorem}
- 
+
 \begin{question}
 Which of the following series converge? (Select all that apply)
 
 \begin{selectAll}
-\choice{$\sum_{k=2}^{\infty} \frac{1}{\sqrt{k}}$} 
-\choice[correct]{$\sum_{k=3}^{\infty} \frac{1}{k^{3/2}}$} 
-\choice[correct]{$\sum_{k=5}^{\infty} k^{-4}$} 
-\choice{$\sum_{k=1}^{\infty} \frac{1}{k^{.1}}$} 
+\choice{$\sum_{k=2}^{\infty} \frac{1}{\sqrt{k}}$}
+\choice[correct]{$\sum_{k=3}^{\infty} \frac{1}{k^{3/2}}$}
+\choice[correct]{$\sum_{k=5}^{\infty} k^{-4}$}
+\choice{$\sum_{k=1}^{\infty} \frac{1}{k^{.1}}$}
 \end{selectAll}
 \end{question}
 
 \end{document}
-
-
