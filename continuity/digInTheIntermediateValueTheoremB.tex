@@ -187,22 +187,32 @@ The Intermediate Value Theorem can be used to show that curves cross:
 
 
 \begin{example}
-  Explain why the graphs of the functions $f(x) = x^2\ln(x)$  and $ g(x) = \sqrt{\ln(x)}$ intersect on the interval $[\ln(2),\ln(10)]$.
+  Explain why the graphs of the functions $f(x) = x^2+x-1$  and $ g(x) = 6x^2+5x-3$ intersect on the interval $[0,1]$.
 
-  To start, note that both $f$ and $g$ are continuous functions on the interval $[1,e]$, and
-  hence $h = f-g$ is also a continuous function on the interval $[1,e]$. Now
+  To start, try to solve $f(x)=g(x)$ to find the point of intersection.
+  $$
+    x^2+x-1 = 6x^2+5x-3 \iff 0 = 5x^2+4x-2
+  $$
+  Since, $5x^2+4x-2$ is prime we could attempt to use the quadratic formlua. However, we can also note that both $f$ and $g$ are continuous functions on the interval $[0,1]$, and
+  hence $h = f-g$ is also a continuous function on the interval $[0,1]$. Now
   \begin{align*}
-    h(1) &= f(1) - g(1) \\
-    &= (\answer[given]{1})^2\cdot \ln(\answer[given]{1}) - 2\cdot\answer[given]{1}\cdot \cos(\ln(\answer[given]{1}))\\
-    &= \answer[given]{-2}.
+    h(0) &= f(0) - g(0) \\
+    &= \left((\answer[given]{0})^2+ (\answer[given]{0}) - 1 \right) -
+      \left( 6\cdot (\answer[given]{0})^2 + 5\cdot (\answer[give]{0}) - 3 \right)
+      \\
+    & = (\answer[given]{-1}) - (\answer[given]{-3})\\
+    &= \answer[given]{2}.
   \end{align*}
   and in a similar fashion
    \begin{align*}
-    h(e) &= f(e) - g(e) \\
-    &= e^2\cdot \answer[given]{1} - 2\cdot e\cos(\answer[given]{1})
+    h(1) &= f(1) - g(1) \\
+    &= \left((\answer[given]{1})^2+ (\answer[given]{1}) - 1 \right) -
+      \left( 6\cdot (\answer[given]{1})^2 + 5\cdot (\answer[give]{1}) - 3 \right)
+      \\
+    & = (\answer[given]{2}) - (\answer[given]{8})\\
+    &= \answer[given]{-6}.
    \end{align*}
-   Since $e>2$ and $0 < \cos(1)<1$ we see that the expression above is
-   positive. Therefore, $h(1)<0<h(e)$, and by the Intermediate Value Theorem, there exist a number $c$ in $(1,e)$ such that
+   Therefore, $h(0)>0>h(1)$, and by the Intermediate Value Theorem, there exist a number $c$ in $(0,1)$ such that
   \[
   h(c)=0.
   \]
