@@ -45,7 +45,7 @@ We'll start with a question:
      \[
      \text{displacement}=\text{velocity}\cdot
      (\text{elapsed time}),
-     \]  
+     \]
      The graph of the (constant) velocity function $v$ on the interval
      $[2,5]$ is given in the figure.
       \begin{image}
@@ -76,7 +76,7 @@ We'll start with a question:
 \end{tikzpicture}
 \end{image}
 
-      So, the displacement of an object is given by the product of the  velocity and elapsed time, and is represented by the area of the shaded rectangle in the figure. 
+      So, the displacement of an object is given by the product of the  velocity and elapsed time, and is represented by the area of the shaded rectangle in the figure.
       \end{feedback}
 \end{question}
 Since the displacement of an object moving at constant velocity
@@ -86,11 +86,11 @@ at nonconstant velocity using Riemann sums.  We explain this
 process in detail in our next example.
 
 
-%    
+%
 %    The fact that these two answers are the same is the germ of one of the
 %    most ``fundamental'' ideas in all of calculus. However, before we can
 %    step ahead, we might first look back to our even younger days of being mathematicians.
-%    
+%
 %    Recall that there are (at least!) two basic models of multiplication:
 %    A ``rate times time'' perspective and an ``area'' perspective.  For
 %    instance, we could interpret
@@ -108,7 +108,7 @@ process in detail in our next example.
 %    \end{quote}
 %    In what follows below, we will leverage these two different notions to
 %    gain insight into our study of functions.
-%    
+%
 
 %
 
@@ -116,14 +116,14 @@ process in detail in our next example.
   Assume an object is moving along a straight line with the velocity
   $v(t)=\frac{t^2}{4}+1$, for $0\le t\le4$, where $t$ is measured in
   seconds, and $v$ in $\frac{\unit{ft}}{\unit{s}}$.
-  
-  Find the displacement of the object over the time interval $[0,4]$. 
+
+  Find the displacement of the object over the time interval $[0,4]$.
   \begin{explanation}
    Since we know how to compute the displacement when the velocity is
    constant, we will start by asuming that the velocity is constant
    and equal to $v(0)$, the initial velocity, for the entire
    four-second time interval, $\Delta t=4$.
-   
+
    This scenario will give us a very rough approximation of the
    displacement, but it is a good starting point.
   \[
@@ -137,7 +137,7 @@ This scenario is illustrated in the figure below.
             domain=-.2:4.2, xmin =-.2,xmax=4.2,ymax=5,ymin=-1,
             width=4in,
             height=4in,
-            xtick={1,2,3,4}, 
+            xtick={1,2,3,4},
 	   ytick={1,2,3,4,5},
             xticklabels={1,2,3,4},
             yticklabels={1,2,3,4,5},
@@ -148,7 +148,7 @@ This scenario is illustrated in the figure below.
           ]
           \addplot [draw=penColor,fill=fillp,domain=0:4, smooth] {1} \closedcycle;
           \addplot [ultra thick,penColor2, smooth, domain=0:4] {f(x)};
-          
+
 
             \node[anchor=east] at (axis cs:3,3.63) {$y=v(t)$};
              \node[anchor=east] at (axis cs:2.6,0.63) {$v(0)\cdot\Delta t$ };
@@ -171,7 +171,7 @@ This scenario is illustrated in the figure below.
 %        domain=0:10, xmin =0,xmax=10.2,ymax=45,ymin=-1,
 %        width=6in,
 %        height=3in,
-%        xtick={0,2,4,6,8,10}, 
+%        xtick={0,2,4,6,8,10},
 %        %xticklabels={$1$,$1.5$,$2$, $2.5$, $3$},
 %        %% ytick style={draw=none},
 %        %% yticklabels={},
@@ -183,11 +183,11 @@ This scenario is illustrated in the figure below.
 %      \addplot [draw=penColor2,ultra thick] plot coordinates {(2,{f(0)*2}) (4, {f(0)*2+f(2)*2})};
 %
 %      \addplot [draw=black,dashed,->,>=stealth'] plot coordinates {(2.1,12) (3.9, 12)};
-%                
+%
 %      \addplot [draw=black,dashed,->,>=stealth'] plot coordinates {(4,13) (4, 23)};
-%      
+%
 %      \node[anchor=west] at (axis cs:4,18) {\small${\color{penColor2}v(2)\cdot 2}$};
-%                
+%
 %    \end{axis}
 %\end{tikzpicture}
 %\end{image}
@@ -200,7 +200,7 @@ This scenario is illustrated in the figure below.
 %        domain=0:10, xmin =0,xmax=10.2,ymax=45,ymin=-1,
 %        width=6in,
 %        height=3in,
-%        xtick={0,2,4,6,8,10}, 
+%        xtick={0,2,4,6,8,10},
 %        %xticklabels={$1$,$1.5$,$2$, $2.5$, $3$},
 %        %% ytick style={draw=none},
 %        %% yticklabels={},
@@ -215,14 +215,14 @@ This scenario is illustrated in the figure below.
 %
 %      \addplot [draw=black,dashed,->,>=stealth'] plot coordinates {(4.1,24) (5.9, 24)};
 %
-%      
+%
 %
 %      \addplot [draw=black,dashed,->,>=stealth'] plot coordinates {(6,25) (6, 31)};
 %
-%      
+%
 %
 %      \node[anchor=west] at (axis cs:6,27) {\small${\color{penColor3}v(4) \cdot 2}$};
-%      
+%
 %    \end{axis}
 %\end{tikzpicture}
 %\end{image}
@@ -234,7 +234,7 @@ This scenario is illustrated in the figure below.
 %        domain=0:10, xmin =0,xmax=10.2,ymax=45,ymin=-1,
 %        width=6in,
 %        height=3in,
-%        xtick={0,2,4,6,8,10}, 
+%        xtick={0,2,4,6,8,10},
 %        %xticklabels={$1$,$1.5$,$2$, $2.5$, $3$},
 %        %% ytick style={draw=none},
 %        %% yticklabels={},
@@ -248,9 +248,9 @@ This scenario is illustrated in the figure below.
 %      \addplot [draw=penColor4,ultra thick] plot coordinates {(6, {f(0)*2+f(2)*2+f(4)*2}) (8, {f(0)*2+f(2)*2+f(4)*2 + f(6)*2})};
 %
 %      \addplot [draw=black,dashed,->,>=stealth'] plot coordinates {(6.1,32) (7.9, 32)};
-%                          
+%
 %      \node[anchor=east] at (axis cs:8,30) {\small${\color{penColor4}v(6)\cdot 2}$};
-%      
+%
 %    \end{axis}
 %\end{tikzpicture}
 %\end{image}
@@ -262,13 +262,13 @@ This scenario is illustrated in the figure below.
 %        domain=0:10, xmin =0,xmax=10.2,ymax=45,ymin=-1,
 %        width=6in,
 %        height=3in,
-%        xtick={0,2,4,6,8,10}, 
+%        xtick={0,2,4,6,8,10},
 %        %xticklabels={$1$,$1.5$,$2$, $2.5$, $3$},
 %        %% ytick style={draw=none},
 %        %% yticklabels={},
 %        axis lines=center, xlabel=$t$, ylabel=$y$,
 %        every axis y label/.style={at=(current axis.above origin),anchor=south},
-%        every axis x label/.style={at=(current axis.right of origin),anchor=west},            
+%        every axis x label/.style={at=(current axis.right of origin),anchor=west},
 %      ]
 %      \addplot [draw=penColor,ultra thick] plot coordinates {(0,0) (2,{f(0)*2})};
 %      \addplot [draw=penColor2,ultra thick] plot coordinates {(2,{2*f(0)}) (4, {2*f(0)+f(2)*2})};
@@ -280,8 +280,8 @@ This scenario is illustrated in the figure below.
 %
 %      \addplot [draw=black,dashed,->, >=stealth'] plot coordinates {(10,31) (10, 21)};
 %
-%      \node[anchor=east] at (axis cs:10,28) {\small${\color{penColor5}v(8)\cdot 2}$};  
-%      
+%      \node[anchor=east] at (axis cs:10,28) {\small${\color{penColor5}v(8)\cdot 2}$};
+%
 %    \end{axis}
 %\end{tikzpicture}
 %\end{image}
@@ -292,8 +292,8 @@ Now it should be clear how to proceed. We will keep approximating the velocity w
 In our next step we will assume that the velocity is constant during two-second time intervals $[0,2]$ and $[2,4]$. For each of these two intervals, we assume that the velocity is equal to the velocity at the beginning of the time interval.
 
 In this case,  the object would move by $v(0)\cdot2 \unit{ft}$ during the time interval $[0,2]$, and during the next two seconds, the object would move by $v(2)\cdot2 \unit{ft}$.
- 
-  
+
+
 If we let $\Delta t$ denote the length of the time interval, we can approximate the displacement  and write
 
   \[
@@ -317,7 +317,7 @@ This scenario is illustrated in the figure below.
             domain=-.2:4.2, xmin =-.2,xmax=4.2,ymax=5,ymin=-1,
             width=4in,
             height=4in,
-            xtick={1,2,3,4}, 
+            xtick={1,2,3,4},
 	    ytick={1,2,3,4,5},
             xticklabels={1,2,3,4},
             yticklabels={1,2,3,4,5},
@@ -352,7 +352,7 @@ by $v(0)\cdot1 \unit{ft}$; during the second time interval of one
 second, the object would move by $v(1)\cdot1 \unit{ft}$, during the
 third second, the object would move by $v(2)\cdot1 \unit{ft}$, and
 during the last second, it would move by $v(3)\cdot1 \unit{ft}$.
- 
+
 During the entire time interval, the object would move by
 \begin{align*}
   \text{displacement} &\approx v(0)\cdot\Delta t+v(1)\cdot\Delta t+v(2)\cdot\Delta t+v(3)\cdot\Delta t\\
@@ -375,7 +375,7 @@ This scenario is illustrated in the figure below.
             domain=-.2:4.2, xmin =-.2,xmax=4.2,ymax=5,ymin=-1,
             width=4in,
             height=4in,
-            xtick={1,2,3,4}, 
+            xtick={1,2,3,4},
 	   ytick={1,2,3,4,5},
             xticklabels={1,2,3,4},
             yticklabels={1,2,3,4,5},
@@ -411,13 +411,13 @@ This scenario is illustrated in the figure below.
 Now, we approximate the displacement of the object assuming that the velocity is constant during half-second time intervals, and that velocity is equal to the velocity at the beginning of each time interval.
 
 
- Under this assumption,  during the first half-second, the object would move by $v(0)\cdot\frac{1}{2} \unit{ft}$;  during the second time interval of half a  second, the object would move by $v\left(\frac{1}{2}\right)\cdot\frac{1}{2} \unit{ft}$, during the third half- second interval, the object would move by $v(1)\cdot\frac{1}{2} \unit{ft}$,etc. 
- 
- 
+ Under this assumption,  during the first half-second, the object would move by $v(0)\cdot\frac{1}{2} \unit{ft}$;  during the second time interval of half a  second, the object would move by $v\left(\frac{1}{2}\right)\cdot\frac{1}{2} \unit{ft}$, during the third half- second interval, the object would move by $v(1)\cdot\frac{1}{2} \unit{ft}$,etc.
+
+
  During the entire time interval, the object would move by
 \begin{align*}
    \text{displacement} &\approx v(0)\Delta t+v\left(\frac{1}{2}\right)\Delta t+ \cdots +v\left(\frac{7}{2}\right)\Delta t\\
-   &=\answer[given]{8.375} \unit{ft} 
+   &=\answer[given]{8.375} \unit{ft}
 \end{align*}
 Using sigma notation and the fact that $\Delta t=\frac{4-0}{8}=\frac{1}{2}$, we can write
 
@@ -432,7 +432,7 @@ Using the standard notation for sample points, we can write
   This is a left Riemann sum for the function $v$ on the interval $[0,4]$,when $n=8$.
 This scenario is illustrated in the figure below.
 
-        
+
 \begin{image}
   \begin{tikzpicture}[
       declare function = {f(\x) =(1/4)*(x^2) +1;} ]
@@ -440,7 +440,7 @@ This scenario is illustrated in the figure below.
             domain=-.2:4.2, xmin =-.2,xmax=4.2,ymax=5,ymin=-1,
             width=4in,
             height=4in,
-            xtick={0.5,1,1.5,2,2.5,3,3.5,4}, 
+            xtick={0.5,1,1.5,2,2.5,3,3.5,4},
 	   ytick={1,2,3,4,5},
             xticklabels={0.5,1,1.5,2,2.5,3,3.5,4},
             yticklabels={1,2,3,4,5},
@@ -483,7 +483,7 @@ Riemann sum of the function $v$ on the interval $[0,4]$.
 \begin{image}
   \begin{tikzpicture}[
       declare function = {f(\x) = (1/4)*x^2 + 1;}]
-    \begin{axis}[  
+    \begin{axis}[
         domain=-.2:4.2, xmin =-.2,xmax=4.2,ymax=5.2,ymin=-.7,
         width=6in,
         height=3in,xtick={0,2,2.8,4},
@@ -499,7 +499,7 @@ Riemann sum of the function $v$ on the interval $[0,4]$.
                {
                 \addplot [draw=penColor,fill=fillp,domain=2:2.8, smooth] {2.037} \closedcycle;
                };
-               \addplot [ultra thick,penColor2, smooth] {f(x)}; 
+               \addplot [ultra thick,penColor2, smooth] {f(x)};
                %\addplot [ultra thick,penColor2, smooth] plot coordinates {(2,0) (2,2.037)};
                \node[fillp!50!black] at (axis cs:2.4,0.7) {\huge$\mathsf{k}$};
                  \node[fillp!50!black] at (axis cs:1.7,1.1) {${v(t^*_{k})}$};
@@ -524,9 +524,9 @@ velocity equal to the velocity at the beginning of each time interval.
  during the second such time interval, the object would move by
  $v\left(\frac{4}{n}\right)\cdot\frac{4}{n} \unit{ft}$, during the
  third time interval, the object would move by
- 
- $v\left(2\frac{4}{n}\right)\cdot\frac{4}{n} \unit{ft}$, etc. 
- 
+
+ $v\left(2\frac{4}{n}\right)\cdot\frac{4}{n} \unit{ft}$, etc.
+
  During the entire time interval, the object would move by
 \begin{align*}
    \text{displacement} \approx v(0)\cdot\Delta
@@ -548,8 +548,8 @@ and
    \text{displacement}\approx \sum_{k=1}^nv(t_{k}^*)\Delta t.
   \]
   This is a left Riemann sum for the function $v$ on the interval $[0,4]$.
-  
-  
+
+
 What happens when we let $n\to\infty$?
 
 Approximations get better and better, because we approximate the
@@ -579,7 +579,7 @@ This gives us another interpretation of the definite integral. Namely,
   \[
    \text{displacement}=\text{change in position}
 \]
-  
+
   The change in position can be written in terms of $s$, the position function of the object
   \[
    \text{displacement}=s(4)-s(0).
@@ -601,7 +601,7 @@ Now we can compute the displacement
    \text{displacement}=s(4)-s(0)=\frac{\answer[given]{28}}{3}.
 \]
   \end{explanation}
-  
+
 Much more important than this computation is the fact that we were able to express the displacement as a definite integral and  compute the definite integral  of $v$ using the antiderivative of $v$.
 
  \[
@@ -616,7 +616,6 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 \]
 
 \end{example}
-\end{document}
 %
 %\begin{example}
 %Use your approximation above with a step-size of $dt=2$ to
@@ -630,13 +629,13 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 %        domain=0:10, xmin =0,xmax=10.2,ymax=45,ymin=-1,
 %        width=6in,
 %        height=3in,
-%        xtick={0,2,4,6,8,10}, 
+%        xtick={0,2,4,6,8,10},
 %        %xticklabels={$1$,$1.5$,$2$, $2.5$, $3$},
 %        %% ytick style={draw=none},
 %        %% yticklabels={},
 %        axis lines=center, xlabel=$t$, ylabel=$y$,
 %        every axis y label/.style={at=(current axis.above origin),anchor=south},
-%        every axis x label/.style={at=(current axis.right of origin),anchor=west},            
+%        every axis x label/.style={at=(current axis.right of origin),anchor=west},
 %      ]
 %      \addplot [draw=penColor,ultra thick] plot coordinates {(0,0) (2,{f(0)*2})};
 %      \addplot [draw=penColor2,ultra thick] plot coordinates {(2,{2*f(0)}) (4, {2*f(0)+f(2)*2})};
@@ -649,18 +648,18 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 %      \addplot [draw=black,dashed,->,>=stealth'] plot coordinates {(4.1,24) (5.9, 24)};
 %      \addplot [draw=black,dashed,->,>=stealth'] plot coordinates {(6.1,32) (7.9, 32)};
 %      \addplot [draw=black,dashed,->,>=stealth'] plot coordinates {(8.1,32) (9.9, 32)};
-%      
+%
 %      \addplot [draw=black,dashed,->,>=stealth'] plot coordinates {(2,1) (2, 11)};
 %      \addplot [draw=black,dashed,->,>=stealth'] plot coordinates {(4,13) (4, 23)};
 %      \addplot [draw=black,dashed,->,>=stealth'] plot coordinates {(6,25) (6, 31)};
 %      \addplot [draw=black,dashed,->, >=stealth'] plot coordinates {(10,31) (10, 21)};
-%      
+%
 %      \node[anchor=west] at (axis cs:2,6) {\small${\color{penColor}v(0)\cdot 2}$};
 %      \node[anchor=west] at (axis cs:4,18) {\small${\color{penColor2}v(2)\cdot 2}$};
 %      \node[anchor=west] at (axis cs:6,27) {\small${\color{penColor3}v(4) \cdot 2}$};
 %      \node[anchor=east] at (axis cs:8,30) {\small${\color{penColor4}v(6)\cdot 2}$};
-%      \node[anchor=east] at (axis cs:10,28) {\small${\color{penColor5}v(8)\cdot 2}$};        
-%      
+%      \node[anchor=east] at (axis cs:10,28) {\small${\color{penColor5}v(8)\cdot 2}$};
+%
 %      \node at (axis cs:5,40) {\Large${\color{penColor}v(0)\cdot 2} + {\color{penColor2}v(2)\cdot 2} + {\color{penColor3}v(4) \cdot 2} + {\color{penColor4}v(6)\cdot 2} + {\color{penColor5}v(8)\cdot 2}$};
 %    \end{axis}
 %\end{tikzpicture}
@@ -686,16 +685,16 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 %\[
 %\text{rate}\times\text{time}
 %\]
-%as 
+%as
 %\[
 %\text{height}\times\text{width}
 %\]
 %Check it out: here $n=5$, $\Delta t = 2$, and we are looking at
-%left-endpoints! Here is a suggestive graph of $y=v(t)$:    
+%left-endpoints! Here is a suggestive graph of $y=v(t)$:
 %\begin{image}
 %\begin{tikzpicture}[
 %  declare function = {f(\x) = 6+\x/2 - pow(\x,2)/4;}]
-%\begin{axis}[  
+%\begin{axis}[
 %    domain=0:10, xmin =-1,xmax=10.2,ymax=10,ymin=-10,
 %    width=6in,
 %    height=3in,xtick={0,2,4,...,8},
@@ -726,13 +725,13 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 %           \addplot [draw=penColor,fill=fill5] plot coordinates
 %           {({5-1) * 2},{f((5-1) * 2)})
 %             ({(5) * 2},{f((5-1) * 2) })} \closedcycle;
-%           
+%
 %           \addplot [ultra thick,penColor, smooth] {f(x)};
 %          \node at (axis cs:1,7) {\large$v(0)\cdot 2$};
 %          \node at (axis cs:3,7) {\large$v(2)\cdot 2$};
 %          \node at (axis cs:5,5) {\large$v(4)\cdot 2$};
 %          \node at (axis cs:7,1) {\large$v(6)\cdot 2$};
-%          \node at (axis cs:9,1) {\large$v(8)\cdot 2$}; 
+%          \node at (axis cs:9,1) {\large$v(8)\cdot 2$};
 %\end{axis}
 %\end{tikzpicture}
 %\end{image}
@@ -750,7 +749,7 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 %    domain=0:10, xmin =0,xmax=10.2,ymax=45,ymin=-1,
 %    width=6in,
 %    height=3in,
-%    xtick={0,2,4,6,8,10}, 
+%    xtick={0,2,4,6,8,10},
 %    %xticklabels={$1$,$1.5$,$2$, $2.5$, $3$},
 %    %% ytick style={draw=none},
 %    %% yticklabels={},
@@ -766,7 +765,7 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 %  \addplot [draw=black,ultra thick,dashed] {6*x + x^2/4-x^3/12};
 %\end{axis}
 %\end{tikzpicture}
-%\end{image}    
+%\end{image}
 %At each step we are computing
 %\[
 %\d s = v(t)\d t
@@ -779,7 +778,7 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 %    domain=0:10, xmin =0,xmax=10.2,ymax=45,ymin=-1,
 %    width=6in,
 %    height=3in,
-%    xtick={0,2,4,6,8,10}, 
+%    xtick={0,2,4,6,8,10},
 %    %xticklabels={$1$,$1.5$,$2$, $2.5$, $3$},
 %    %% ytick style={draw=none},
 %    %% yticklabels={},
@@ -807,7 +806,7 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 %  \node[anchor=east] at (axis cs:10,26) {$\d s$};
 %\end{axis}
 %\end{tikzpicture}
-%\end{image}    
+%\end{image}
 %
 %
 %
@@ -822,7 +821,7 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 %    domain=0:10, xmin =0,xmax=10.2,ymax=45,ymin=-1,
 %    width=6in,
 %    height=3in,
-%    xtick={0,2,4,6,8,10}, 
+%    xtick={0,2,4,6,8,10},
 %    %xticklabels={$1$,$1.5$,$2$, $2.5$, $3$},
 %    %% ytick style={draw=none},
 %    %% yticklabels={},
@@ -831,30 +830,30 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 %    every axis x label/.style={at=(current axis.right of origin),anchor=west},
 %  ]
 %  \addplot [draw=black!20!white,ultra thick] plot coordinates {(0,0) (2, 12) (4, 24) (6, 32) (8, 32) (10, 20)};
-%  
-%  \addplot [draw=black!30!white,ultra thick] plot coordinates {(0,0) (1., 6.) (2., 12.25) (3., 18.25) (4., 23.5) (5., 27.5) (6., 
+%
+%  \addplot [draw=black!30!white,ultra thick] plot coordinates {(0,0) (1., 6.) (2., 12.25) (3., 18.25) (4., 23.5) (5., 27.5) (6.,
 %    29.75) (7., 29.75) (8., 27.) (9., 21.) (10., 11.25)
 %  };
 %
-%  \addplot [draw=black!40!white,ultra thick] plot coordinates {(0,0) (0.5, 3.) (1., 6.09375) (1.5, 9.21875) (2., 12.3125) (2.5, 
-%    15.3125) (3., 18.1563) (3.5, 20.7813) (4., 23.125) (4.5, 25.125) 
-%    (5., 26.7188) (5.5, 27.8438) (6., 28.4375) (6.5, 28.4375) (7., 
-%    27.7813) (7.5, 26.4063) (8., 24.25) (8.5, 21.25) (9., 17.3438) 
+%  \addplot [draw=black!40!white,ultra thick] plot coordinates {(0,0) (0.5, 3.) (1., 6.09375) (1.5, 9.21875) (2., 12.3125) (2.5,
+%    15.3125) (3., 18.1563) (3.5, 20.7813) (4., 23.125) (4.5, 25.125)
+%    (5., 26.7188) (5.5, 27.8438) (6., 28.4375) (6.5, 28.4375) (7.,
+%    27.7813) (7.5, 26.4063) (8., 24.25) (8.5, 21.25) (9., 17.3438)
 %(9.5, 12.4688) (10., 6.5625)};
-%  
-%  
-%  \addplot [draw=black!50!white,ultra thick] plot coordinates {(0.2, 1.2) (0.4, 2.418) (0.6, 3.65) (0.8, 4.892) (1., 6.14) 
-%    (1.2, 7.39) (1.4, 8.638) (1.6, 9.88) (1.8, 11.112) (2., 12.33) 
-%    (2.2, 13.53) (2.4, 14.708) (2.6, 15.86) (2.8, 16.982) (3., 
-%    18.07) (3.2, 19.12) (3.4, 20.128) (3.6, 21.09) (3.8, 22.002) 
-%    (4., 22.86) (4.2, 23.66) (4.4, 24.398) (4.6, 25.07) (4.8, 
-%    25.672) (5., 26.2) (5.2, 26.65) (5.4, 27.018) (5.6, 27.3) (5.8, 
-%    27.492) (6., 27.59) (6.2, 27.59) (6.4, 27.488) (6.6, 27.28) 
-%    (6.8, 26.962) (7., 26.53) (7.2, 25.98) (7.4, 25.308) (7.6, 
-%24.51) (7.8, 23.582) (8., 22.52) (8.2, 21.32) (8.4, 19.978) 
-%(8.6, 18.49) (8.8, 16.852) (9., 15.06) (9.2, 13.11) (9.4, 
+%
+%
+%  \addplot [draw=black!50!white,ultra thick] plot coordinates {(0.2, 1.2) (0.4, 2.418) (0.6, 3.65) (0.8, 4.892) (1., 6.14)
+%    (1.2, 7.39) (1.4, 8.638) (1.6, 9.88) (1.8, 11.112) (2., 12.33)
+%    (2.2, 13.53) (2.4, 14.708) (2.6, 15.86) (2.8, 16.982) (3.,
+%    18.07) (3.2, 19.12) (3.4, 20.128) (3.6, 21.09) (3.8, 22.002)
+%    (4., 22.86) (4.2, 23.66) (4.4, 24.398) (4.6, 25.07) (4.8,
+%    25.672) (5., 26.2) (5.2, 26.65) (5.4, 27.018) (5.6, 27.3) (5.8,
+%    27.492) (6., 27.59) (6.2, 27.59) (6.4, 27.488) (6.6, 27.28)
+%    (6.8, 26.962) (7., 26.53) (7.2, 25.98) (7.4, 25.308) (7.6,
+%24.51) (7.8, 23.582) (8., 22.52) (8.2, 21.32) (8.4, 19.978)
+%(8.6, 18.49) (8.8, 16.852) (9., 15.06) (9.2, 13.11) (9.4,
 %10.998) (9.6, 8.72) (9.8, 6.272) (10., 3.65)};
-%  
+%
 %  \addplot [draw=black,ultra thick,dashed] {6*x + x^2/4-x^3/12};
 %\end{axis}
 %\end{tikzpicture}
@@ -870,4 +869,4 @@ Is it true that for any continuous function $f$ and its antiderivative $F$, we c
 %thus we see that an antiderivative is, essentially, a sum.
 %
 %
-%\end{document}
+\end{document}
