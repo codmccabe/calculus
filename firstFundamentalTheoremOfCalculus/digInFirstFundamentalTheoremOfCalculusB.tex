@@ -287,23 +287,23 @@ Let's practice this once more.
   Find the
   derivative
   \[
- \ddx\int_{\cos x}^5 t^3\d t.
+ \ddx\int_{\sqrt{x}}^5 t^3\d t.
   \]
   \begin{explanation}
     Consider
     \[
     F(x) = \int_5^x t^3 \d t
     \]
-    and set $h(x) = \answer[given]{\cos(x)}$. Now
+    and set $h(x) = \answer[given]{\sqrt{x}}$. Now
     \[
-  \int_{\cos x}^5 t^3\d t =- \int_{5}^{\cos x} t^3\d t = -F(h(x)).
+  \int_{\sqrt{x}}^5 t^3\d t =- \int_{5}^{\sqrt{x}} t^3\d t = -F(h(x)).
     \]
     The First Fundamental Theorem of Calculus states that $F'(x) = x^3$. The chain rule gives us
     \begin{align*}
-      \ddx\int_{\cos x}^5 t^3\d t &=  \ddx (-F(h(x)))\\
+      \ddx\int_{\sqrt{x}}^5 t^3\d t &=  \ddx (-F(h(x)))\\
      &= -F'(h(x))h'(x)\\
       &=-\left(h(x)\right)^3 h'(x)\\
-      &=\answer[given]{-\cos^3(x) (-\sin(x))}.
+      &=-\Bigl(\answer[given]{\sqrt{x}}\Bigr)^3\cdot  \Bigl(\answer[given]{\frac{1}{2\sqrt{x}}}\Bigr).
     \end{align*}
   \end{explanation}
 \end{example}
