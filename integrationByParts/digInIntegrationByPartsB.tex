@@ -1,0 +1,441 @@
+\documentclass[noauthor]{ximera}
+
+\input{../preamble.tex}
+
+\outcome{Describe the relationship between the product rule and integration by parts.}
+\outcome{Identify the functions required to transform the integral via integration by parts.}
+\outcome{Evaluate integrals using integration by parts, including multiple iterations.}
+\outcome{Use integration by parts to derive reduction formulas.}
+\author{Jason Miller and Jim Talamo}
+\title[Dig-In:]{Integration by parts}
+
+\begin{document}
+\begin{abstract}
+  We learn a new technique, called integration by parts, to help find antiderivatives of certain types of products by reexamining the product rule for differentiation.
+\end{abstract}
+\maketitle
+
+In order to compute definite integrals we have relied on the Fundamental Theorem of Calculus, which allows us to compute the definite integral easily provided that we can find an antiderivative of the integrand.  In some cases, these applications can lead us to antiderivatives that cannot be evaluated using the basic techniques discussed so far.
+
+\begin{model}
+  Consider the integral
+    \[
+      \int x\cdot e^x\, dx
+    \]
+    \begin{explanation}
+      This could be an integral were the substitution method will work. If we let $u=x$ then $du=dx$,
+        \[
+          \int x\cdot e^x\, dx = \int u\cdot e^u\, du,
+        \]
+        and nothing has changed.
+
+      Let's try $u=e^x$, then $du=e^x\, dx$, $x=\ln(u)$, and nothing really comes from it.
+
+      It needs to be clear that substitution method will not work for this problem. If the integral was $\int x\cdot e^{x^2}\, dx$ then the substitution method would work; however, that is not the case.
+    \end{explanation}
+
+
+In order to develop a technique that allows us to find the desired antiderivative, remember that whenever we have a formula that allows us to differentiate a function $f(x)$, there is a corresponding integration result.  We notice that the above integrand involves a product, so let's try starting with the product rule for derivatives and try to reverse it.
+
+First note that by the product rule we have for differentiable functions $f(x)$ and $g(x)$
+\[
+\ddx \left[f(x)g(x)\right] = f(x)g'(x) + f'(x) g(x).
+\]
+Now integrate both sides of the equation above
+\[
+\int_a^b \ddx \left[ f(x) g(x) \right] \d x = \int_a^b \left[f(x)g'(x) + f'(x) g(x)\right] \d x.
+\]
+By the Fundamental Theorem of Calculus, we can handle the lefthand side of the equation.
+\[
+\int_a^b \ddx \left[f(x) g(x)\right] \d x = \eval{f(x)g(x)}_a^b
+\]
+Also, by the linearity of integrals we can rewrite the righthand side as
+\[
+ \int_a^b \left[f(x)g'(x) + f'(x) g(x)\right] \d x = \int_a^b f(x)g'(x)\d x + \int_a^b f'(x) g(x) \d x.
+\]
+Hence, we find
+\[
+\eval{f(x)g(x)}_a^b = \int_a^b f(x)g'(x)\d x + \int_a^b f'(x) g(x) \d x.
+\]
+and so by a little rearranging,
+\[
+ \int_a^b f(x)g'(x)\d x = \eval{f(x)g(x)}_a^b -  \int_a^b f'(x) g(x) \d x.
+\]
+
+Now, let's return to the integral
+\[
+V=\int x\cdot e^x \d x
+\]
+
+We first find the antiderivatives of $x\cdot e^x \d x$ and make the seemingly bold claim that the previously developed formula will help us find them.  Here's how it works.
+
+Since $e\cdot e^x$ is a product and none of our previous techniques work, we can try integration by parts.  Note that the formula requires that we pick part of the product to differentiate and part of it to integrate.  Since $x$ becomes constant when we differentiate it, and the antiderivatives of $e^x$ are easy to find, let's try $u=x$ and $\d v=e^x \d x$.
+
+\begin{align*}
+u &= x & \d v & = e^x \d x \\
+ \d u &= \answer[given]{1} \d x & v & = \answer[given]{e^x}
+\end{align*}
+
+The integration by parts result gives us the following.
+
+\begin{align*}
+\int x\cdot e^x \d x & = \answer[given]{x e^x} - \int e^x \d x \\
+  & = \answer[given]{x e^x} - \answer[given]{e^x} +C
+\end{align*}
+
+To ensure that this result is correct, we can check by differentiating the righthand side and comparing it to the original integral.
+
+\[
+\ddx\left[x\cdot e^x - e^x +C \right] = \left( x\cdot e^x + \cancel{e^x} \right) - \cancel{e^x}= \answer[given]{x \cdot e^x}.
+\]
+
+Thus, we have found the antiderivatives for $x\cdot e^x$.
+\end{model}
+
+
+
+\section{The integration by parts formula}
+The technique we applied in the above example extends to many other \emph{products} of functions.  We summarize the result of the argument in the preceding example first, then study other types of integrals for which this is a useful technique:
+
+\begin{formula}
+Suppose that $u$ and $v$ are continuously differentiable functions of $x$.  Then
+\begin{align*}
+\int u \d v &= uv - \int v \d u & \textrm{(integration by parts for indefinite integrals)} \\
+\int_a^b u \d v &= \eval{uv}_a^b - \int_a^b v \d u & \textrm{(integration by parts for definite integrals)}
+\end{align*}
+\end{formula}
+
+In general, we want to choose $u$ so the resulting integral on the righthand side is ``easier" to compute, but in doing so, we must be able to integrate our choice for $\d v$.
+
+We'll now work some standard examples to develop some intuition for the technique.
+
+%\begin{example}
+%Compute:
+%\[
+%\int x\sin(x) \d x
+%\]
+%\begin{explanation} Let $u=x$ so $\d u=\d x$. Hence, $\d v=\answer[given]{\sin(x)}\d x$ so $v=\answer[given]{-\cos(x)}$ and
+%\begin{align*}
+%\int x\sin(x)\d x &=\answer[given]{-x\cos(x)}-\int -\cos(x)\d x\\
+%&= \answer[given]{-x\cos(x)}+\int \cos(x)\d x\\
+%&=\answer[given]{-x\cos(x)}+\answer[given]{\sin x}+C.
+%\end{align*}
+%Let us verify the solution by taking the derivative:
+%\[
+%\ddx \left(-x \cos(x) + \sin(x) + C \right)=-1 \cos(x)+x\sin(x) +\cos(x)=x \sin(x)
+%\]
+%\end{explanation}
+%\end{example}
+
+\begin{example}
+Compute $\int \frac{\ln(x)}{x^2} \d x$.
+
+\begin{explanation}
+This is not a function whose antiderivative we already know, and there is no way to simplify this expression algebraically nor does a $u$-substitution help.  However, the integrand is a product, $\ln(x)\cdot \frac{1}{x^2}$ so let's try integration by parts.
+
+Note that if we choose $u=\ln(x)$, then we have $\frac{1}{x^2}$ left in the integrand. it is important to notice that letting $u=\frac{1}{x^2}$ would result in $\d v = \ln(x)\d x$ and the antiderivative of $\ln(x)$ is not simple. Let's give it a try.
+
+\begin{align*}
+u &= \ln(x) & \d v & = \frac{1}{x^2} \d x \\
+ \d u &= \answer[given]{\frac{1}{x}} \d x & v & = \answer[given]{-\frac{1}{x}}
+\end{align*}
+
+using the integration by parts result gives the following.
+
+\[
+\int \frac{\ln(x)}{x^2} \d x= -\frac{\ln(x)}{x} - \int \left( -\frac{1}{x} \right)\cdot \frac{1}{x} \d x= -\frac{\ln(x)}{x} - \answer[given]{\frac{1}{x}} + C
+\]
+
+\end{explanation}
+
+We once again can check the validity of the proposed antiderivative above by computing the derivative of our proposed answer.
+
+\[
+\ddx \left[-\frac{\ln(x)}{x} - \frac{1}{x} + C\right] = \left( \frac{\ln(x)}{x^2} - \cancel{\frac{1}{x^2}} \right) + \cancel{\frac{1}{x^2}}= \frac{\ln(x)}{x^2}
+\]
+
+\end{example}
+
+\begin{warning}
+Be careful when writing out the expressions for $u$, $v$, $\d u$, and $\d v$.  The expressions $\d u$ and $\d v$ are \emph{differentials} and since $u$ and $v$ are functions of $x$, the differentials $\d u$ and $\d v$ must include a $\d x$ term.
+\end{warning}
+
+Sometimes, we have ``disguised products" in the integrand, as in the following example.
+
+\begin{example}
+Compute $\int \ln(x)\d x$.
+
+\begin{explanation}
+We cannot find the antiderivatives of $\ln(x)$ (or we could simply write down the answer!), but we do know how to find its derivative.  We try using integration by parts on this problem by setting $u=\ln(x)$.  We now recognize $\ln(x)$ as the sneaky product $\ln(x) \cdot 1$, so that $\int \ln(x) \d x = \ln(x) \cdot 1 \d x$.  Now, choose $\d v = 1 \d x$.
+
+\begin{align*}
+u &= \ln(x) & \d v & =1 \d x \\
+ \d u &= \answer[given]{\frac{1}{x}} \d x & v&= \answer[given]{x}
+\end{align*}
+
+and so by using the integration by parts formula, we obtain the following.
+\begin{align*}
+ \int \ln(x)\d x&=\answer[given]{x \ln(x)}-\int x \cdot \frac{1}{x}\d x\\
+&= x\ln (x)- \answer[given]{x}+C.\\
+\end{align*}
+\end{explanation}
+\end{example}
+
+Sometimes, several techniques arise in the computation of antiderivatives.
+
+\begin{example}
+Compute $\int x\cdot \ln(x) \d x$.
+
+\begin{explanation}
+Let's try using the same argument as the previous example.  Let $u=\answer[given]{\ln(x)}$ so $\d u=\answer[given]{\frac{1}{x}} \d x$. Thus, $\d v=\answer[given]{x} \d x$ and so $v=\answer[given]{\frac{x^2}{2}}$.  the integration by parts result gives
+
+
+\[
+\int x\ln(x) \d x= \answer[given]{\frac{x^2\ln(x)}{2}} - \int \answer[given]{\frac{x}{2}} \d x = \answer[given]{\frac{x^2\ln(x)}{2}} - \answer[given]{\frac{x^2}{4}} +C.
+\]
+
+Now let's check:
+
+\[
+  \ddx \left[ \frac{\answer[given]{x^2\ln(x)}}{2} - \frac{\answer[given]{x^2}}{4} \right] = \answer[given]{x}\ln(x) + \frac{1}{2}\answer[given]{x} - \frac{1}{x}\answer[given]{x} = x\ln(x)
+\]
+
+\end{explanation}
+
+\end{example}
+
+
+
+\section{Repeated integration by parts}
+
+The  integration by parts formula
+ \[
+\int u \d v= uv - \int v \d u
+\]
+ is intended to replace the original integral with one that is easier to determine. However the integral $\int v \d u$ that results may also require integration by parts. This can lead to situations where we may need to apply integration by parts repeatedly until we obtain an integral which we know how to compute.
+
+
+%\begin{example}
+%Determine the integral:
+%\[\int x^{2} e^{x} \d x
+%\]
+%\begin{explanation}
+%We choose $u=x^{2}$ and $\d v=e^{x}$. Then
+%\[
+%\d u=\answer[given]{x}\d x \text{ and } v=\answer[given]{e^{x}}
+%\]
+%Using the integration by parts formula $\int u \d v = uv - \int v \d u$ gives :
+%\[
+%\int x^{2}e^{x} \d x= \answer[given]{ x^{2}e^{x}} - \int \answer[given]{e^{x}} x \d x
+%\]
+%
+%We have reduced the computation of our original integral to computing the integral $\int xe^{x} \d x$, which was our first example in this section. Thus the original integral $\int x^{2}e^{x} \d x$ requires two applications of integration by parts.
+%\end{explanation}
+%\end{example}
+
+\begin{example}
+Compute:
+\[
+\int x^2e^x \d x
+\]
+\begin{explanation}
+Let $u=x^2$, $\d v=e^x \d x$; then $\d u=\answer[given]{2x}\d x$ and $v=\answer[given]{e^x}$.
+
+Now
+\[
+\int x^2e^x\d x=\answer[given]{x^2e^x} - \int e^x\cdot (2x) \d x.
+\]
+This is better than the original integral, but we need to do
+integration by parts again on the rightmost integral. Let $u=2x$, $\d v=e^x \d x$; then $\d u=\answer[given]{2}$
+and $v=\answer[given]{e^x}$, and
+\begin{align*}
+  \int x^2\sin(x)\d x &=\answer[given]{x^2e^x}+\int 2xe^x\d x \\
+  & = x^2e^x - 2xe^x + \int 2e^x \d x \\
+  & = x^2e^x - 2xe^x + 2e^x + C.
+\end{align*}
+\end{explanation}
+\end{example}
+
+\begin{remark}
+Such repeated use of integration by parts with a polynomial is common, but
+it can be a bit tedious. There is a nice procedure, called the \dfn{tabular
+method} that allows for more efficient computation.  We illustrate with the
+previous example.  We form a table by successively differentiating the entries
+in the column for $u$ and antidifferentiating the entries in the column for $\d v$.
+In the ``sign" column, we start with a $+$ and alternate.  Here is the table.
+
+\[
+\begin{array}{|c|c|c|}\hline
+\text{sign} & u & \d v \\ \hline \hline
++ & x^2 & e^x \\ \hline
+- & 2x & e^x \\ \hline
++ & 2  & e^x \\ \hline
+- & 0  & e^x \\ \hline
+\end{array}
+\]
+
+To write down the antiderivative, compute with this second table we begin at the top.
+
+\begin{itemize}
+\item Step 1: Include the sign with the first entry for $u$, and multiply the result by the second entry in column $\d v$.
+\item Step 2: Include the corresponding sign with the entry $u$, and multiply the result by the entry in column $\d v$ one row below the current one for $u$.
+\item Step 3: If you have obtained 0 in the previous calculation, stop this procedure. Otherwise, turn your attention to the next lowest row and continue performing the process from Step 2 until you arrive at 0.  Don't forget the constant of integration at the end.
+\end{itemize}
+
+Here's how it works in the chosen example.  Note that the explicit results are given inside of the square brackets.
+
+\begin{align*}
+\int x^2 e^x \d x &= \left[(+x^2)(e^x)\right] + \left[(-2x)(e^x) \right] +\left[(+2)(e^x)\right] + C\\
+&= x^2 e^x - 2xe^x + 2e^x +C
+\end{align*}
+
+\end{remark}
+
+% Sometimes, we can perform integration by parts a few times and recover our original integral.
+%
+% \begin{example}
+% Determine the integral $\int e^{x}\cos(x) \d x$.
+% \begin{explanation}
+%
+% Choose $u=e^{x}$ and $\d v=\cos(x) \d x$.
+% Then we have
+% \[
+% \d u =e^{x} \text{ and }  v=\sin(x)
+% \]
+% Using the integration by parts result, we find
+% \[
+% \int e^{x}\cos(x) \d x = \int e^{x} \cos(x) \d x= e^{x} \sin(x) - \int e^{x} \sin(x) \d x.
+% \]
+%
+% The integral on the right looks very similar to our original integral. But we persist and try integration by parts on the rightmost integral $\int e^{x} \sin(x) \d x$.
+%
+% Choose $u=e^{x}$ and $\d v= \sin(x)$.
+% This gives us
+%
+% \[
+% \d u=e^{x} \text{ and } v=-\cos(x)
+% \]
+%
+% and so
+%
+% \[
+% \int e^{x}\sin(x) \d x= -e^{x}\cos(x) + \int e^{x} \cos(x) \d x
+% \]
+%
+% Plugging this into the formula we derived previously, we have
+%
+% \[
+% \int e^{x} \cos(x) \d x=e^{x} \sin(x)+e^{x} \cos(x) - \int e^{x} \cos(x) \d x
+% \]
+%
+% It may appear that we have not made any progress. We have applied integration by parts twice and all we have managed to do is obtain our original integral again.
+%
+% To see how this is helpful, denote our original integral by $I$, so $I=\int e^{x} \cos(x) \d x$. The above formula we derived can be written as
+%
+% \[
+%  I = e^{x} \sin(x) +e^{x} \cos(x) -I,
+% \]
+%
+% which is an algebraic equation in $I$ that can be solved. Indeed, we find
+%
+% \[
+%  2I = e^{x} \sin(x) +e^{x} \cos(x),
+% \]
+%
+% and use this to conclude that
+% \[
+%  I=\int e^{x}\cos(x) \d x= \frac{1}{2} ( e^{x} \sin(x) +e^{x} \cos(x) ) + C.
+% \]
+%
+% Note we need to include an arbitrary constant of integration since we are finding an antiderivative. The above technique is a useful one to keep in mind. If you do integration by parts multiple times and seem to be getting nowhere, check to see if the original integral reappears.  If it does, then it's possible solve for the integral in the same manner as we did in this example.
+% \end{explanation}
+% \end{example}
+
+Sometimes we can use integration by parts to give a \dfn{reduction formula}.
+
+\begin{example}
+  Show that $  \int x^n e^x \d x = x^n e^x -n \int x^{n-1} e^x\d x$.
+  \begin{explanation}
+   Set $u= x^n$ and $\d v = e^x \d x$.
+
+   Hence $\d u = n x^{n-1}$ and $v = e^x$. Using the
+    integration by parts formula, we see immediately that
+    \[
+    \int x^n e^x \d x = x^n e^x -n \int x^{n-1} e^x \d x.
+    \]
+  \end{explanation}
+\end{example}
+
+This reduction formula shows how to "reduce" the power of $x$ so the resulting integral is slightly easier. We may use repeated applications of this rule to keep reducing the power of $x$ until we arrive at an integral we know how to compute directly.
+
+\begin{example}
+  Use the reduction formula
+  \[
+  \int x^n e^x \d x = x^n e^x -n \int x^{n-1} e^x\d x
+  \]
+  to compute $\int x^3 e^x \d x.$
+
+  \begin{explanation}
+  Applying the reduction formula gives
+    \[
+    \int x^3 e^x \d x = x^3e^x -3\int \answer[given]{x^2 e^x}\d x.
+    \]
+    Applying the formula again to the rightmost integral we find
+    \[
+    \int x^{2} e^x\d x = x^2e^x - 2 \int \answer[given]{x e^x}\d x.
+    \]
+    Applying the reduction formula once more to the rightmost integral above we find
+    \[
+    \int x e^x\d x =xe^x - \int \answer[given]{e^x}\d x.
+    \]
+
+Now, we can apply these results.
+
+\begin{align*}
+        \int x^3 e^x \d x& = x^3e^x -3 \left[\int x^2 e^x\d x\right] \\
+    &= x^3e^x -3 \left[    x^2e^x - 2 \int x e^x\d x     \right] \quad \textrm{ (by the reduction result)} \\
+    &= x^3e^x - 3x^2e^x+6\left[ \int xe^x \d x \right] \quad \textrm{ (by simplifying)} \\
+    &= x^3e^x - 3x^2e^x+6\left[ xe^x - \int  e^x \d x \right] \quad \textrm{ (by the reduction result)} \\
+    & = \answer[given]{x^3e^x - 3x^2e^x+6 xe^x -6e^x} +C \textrm{ (evaluate the integral and simplify)}
+\end{align*}
+
+You can (and should) try the tabular method and compare the results.
+  \end{explanation}
+\end{example}
+
+%\begin{example}
+%We use integration by parts to obtain a reduction formula for:
+%\[
+%\int (\ln(x))^{n} \d x
+%\]
+%\begin{explanation}
+%We let $u=( \ln(x) )^{n} $ and $\d v= \d x$.
+%We obtain
+%\[ \d u=n ( \ln(x) )^{n-1}\frac{1}{x} \text{  and  } v=x
+%\]
+%The integration by parts formula gives us:
+%\[
+%\int ( \ln(x) )^{n} \d x=\answer[given]{x (ln(x))^{n}} - n \int \answer[given]{(ln(x))^{n-1}} \d x
+%\]
+%\end{explanation}
+%\end{example}
+
+\section{Final thoughts}
+When we covered the substitution method for antiderivatives, we saw that there was no fixed procedure for choosing $u$. There were only certain rules of thumb that might guide you to better or worse choices of which part of the integrand to substitute. The same idea applies in integration by parts. There is no procedure that tells you the best choice for $u$ and $\d v$. However here is a useful heuristic (``rule of thumb") that can guide your choice.
+
+The heuristic is referred by the mnemonic \textit{ILATE}. In order to maintain the mnemonic we will include not applicable special functions for a Buisness Caclulus Student.  The individual letters stand for different types of functions:
+\begin{align}
+&I \text{  stands for inverse trig} \\
+&L \text{  for logarithmic} \\
+&A \text{  for algebraic} \\
+&T \text{  for trigonometic} \\
+&E \text{  for exponetial}
+\end{align}
+The idea is that when choosing $u$ and $\d v$, one looks at the types of functions that show up in the integrand. Function types that occur earlier in \textit{ILATE} are better choices for $u$ while those that appear late are better choices for $\d v$. This is because functions near the top of  \textit{ILATE} generally become simpler when they are differentiated.
+
+For example, in $\int x \ln(x) \d x$, the integrand is made up of a product of a algebraic function $x$ and a logarithmic function $\ln(x)$.  \text{ILATE}  would suggest choosing $u=\ln(x)$ since logarithmic comes above algebraic in \textit{ILATE}. Thus $\d v=x \d x$ since that is the remaining portion. However one should keep in mind that \textit{ILATE} is simply a rule of thumb that does not always apply and can actually make the problem more difficult to solve in some instances.
+
+\begin{quote}
+``Mathematics is the science of skillful operations with concepts and rules invented for this purpose" - Eugene Wigner
+\end{quote}
+\end{document}
