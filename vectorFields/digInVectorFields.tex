@@ -11,7 +11,7 @@
 
 \begin{document}
 \begin{abstract}
-  We introduce the idea of a vector at every point in space. 
+  We introduce the idea of a vector at every point in space.
 \end{abstract}
 \maketitle
 
@@ -35,7 +35,7 @@ being curves in the $(x,y)$-plane:
             xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
-          ]        
+          ]
           \addplot [very thick, penColor, samples=100,smooth, domain=(-3.25:3.25)] {sin(deg(x))};
         \end{axis}
 \end{tikzpicture}
@@ -131,7 +131,7 @@ then $\grad G$ is a vector-field.  Let's be explicit and write a definition.
   \[
   \vec{F}: \R^n\to\R^n
   \]
-  where for every point in the domain, we assign a vector to the range. 
+  where for every point in the domain, we assign a vector to the range.
 \end{definition}
 
 \begin{question}
@@ -143,18 +143,18 @@ then $\grad G$ is a vector-field.  Let's be explicit and write a definition.
       \draw (5,4) -- (5,0);
       \draw (7,4) -- (7,0);
       \draw (9,4) -- (9,0);
-      
+
       \draw (0,0) -- (9,0);
       \draw (0,1) -- (9,1);
       \draw (0,2) -- (9,2);
       \draw (0,3) -- (9,3);
       \draw (0,4) -- (9,4);
-      
+
       \draw[ultra thick] (0,1)--(9,1);
       \draw[ultra thick] (1,4)--(1,0);
-      
+
       \draw (0,0) -- (1,1);
-      %\node at (.9,.9) [below left,inner sep=1pt] {\small$y$};
+      %\node at (.9,.9) [below left,inner sep=1pt] {\small$y$}; 
       %\node at (0.1,.1) [above right,inner sep=1pt] {\small$x$};
       \node at (.1,.9) [below right,inner sep=1pt] {\small$y$};
       \node at (0.9,.1) [above left,inner sep=1pt] {\small$x$};
@@ -170,21 +170,21 @@ then $\grad G$ is a vector-field.  Let's be explicit and write a definition.
       \node at (0.5,1.5) {$5$};
       \node at (0.5,2.5) {$6$};
       \node at (0.5,3.5) {$7$};
-      
-      
+
+
       %% vectors
       %% bottom row
       \node at (2,1.5) {$\veci+2\vecj$};
       \node at (4,1.5) {$-3\vecj$};
       \node at (6,1.5) {$2\vecj$};
       \node at (8,1.5) {$2\veci+4\vecj$};
-      
+
       %% second row
       \node at (2,2.5) {$3\vecj$};
       \node at (4,2.5) {$\vec{0}$};
       \node at (6,2.5) {$2\veci-3\vecj$};
       \node at (8,2.5) {$\veci-2\vecj$};
-      
+
       %% third row
       \node at (2,3.5) {$\veci-\vecj$};
       \node at (4,3.5) {$-2\vecj$};
@@ -238,7 +238,7 @@ then $\grad G$ is a vector-field.  Let's be explicit and write a definition.
 
     The third choice is not a vector field.
 
-    The fourth choice is a constant vector field, and is the correct answer. 
+    The fourth choice is a constant vector field, and is the correct answer.
   \end{feedback}
 \end{question}
 
@@ -296,7 +296,7 @@ field. Let's give an explicit definition.
   \[
   \vec{F}(\vec{x}) = \frac{\pm\vec{x}}{|\vec{x}|^p}
   \]
-  where $p$ is a real number. 
+  where $p$ is a real number.
 \end{definition}
 
 Fun fact: Newton's law of gravitation defines a radial vector field.
@@ -330,7 +330,7 @@ going to use calculus to precisely define what we mean by a field
 \subsection{Rotational fields}
 
 Vector fields can easily exhibit what looks like ``rotation'' to the
-human eye. Let's show you a few examples. 
+human eye. Let's show you a few examples.
 \begin{example}
   Here we see $\vec{F}(x,y) = \vector{-y,x}$.
   \begin{image}
@@ -466,7 +466,7 @@ Here is a deep idea:
 \begin{quote}
   \textbf{The gradient turns functions of several variables into vector fields.}
 \end{quote}
-We can write this with our new notation as: 
+We can write this with our new notation as:
 \[
 C^\infty(\R^n,\R)\overset{\grad}{\to}C^\infty(\R^n,\R^n)
 \]
@@ -475,7 +475,7 @@ C^\infty(\R^n,\R)\overset{\grad}{\to}C^\infty(\R^n,\R^n)
 \subsection{The Clairaut gradient test}
 
 
-Now we give a method to determine if a field is a gradient field. 
+Now we give a method to determine if a field is a gradient field.
 
 
 \begin{theorem}[Clairaut]
@@ -483,7 +483,7 @@ Now we give a method to determine if a field is a gradient field.
   $N$ have continuous partial derivatives, is a gradient field if and
   only if
   \[
-  \pp[N]{x} -\pp[M]{y} = 0  
+  \pp[N]{x} -\pp[M]{y} = 0
   \]
   for all $x$ and $y$.
   \begin{explanation}
@@ -509,7 +509,7 @@ but if all the partial derivatives are continuous, then:
 \[
 \pp[M]{y} = \frac{\partial^2 F}{\partial y\partial x} =  \frac{\partial^2 F}{\partial x\partial y} = \pp[N]{x}
 \]
-This is true if and only if $\pp[N]{x} -\pp[M]{y} = 0$.  
+This is true if and only if $\pp[N]{x} -\pp[M]{y} = 0$.
   \end{explanation}
 \end{theorem}
 
